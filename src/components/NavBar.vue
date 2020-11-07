@@ -6,7 +6,7 @@
 
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
-        <b-nav-item href="https://github.com/lehdqlsl/ymemo">Github</b-nav-item>
+        <b-nav-item href="https://github.com/lehdqlsl/vue-websocket-client">Github</b-nav-item>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>

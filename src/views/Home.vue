@@ -1,7 +1,9 @@
 <template>
   <div class="home">
     <NavBar/>
-    <WebSocket/>
+    <div class="col-12 mt-3">
+      <WebSocket/>
+    </div>
   </div>
 </template>
 
