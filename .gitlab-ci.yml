@@ -17,7 +17,7 @@ variables:
   AWS_DEFAULT_REGION: us-east-1
   S3_BUCKET_NAME: "vue-websocket-client"
 
-deploy-to-s3:
+deploy:
   # aws cli를 설치하기 위해서 python image를 사용합니다.
   image: python:latest
   stage: deploy
