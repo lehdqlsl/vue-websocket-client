@@ -27,7 +27,7 @@ deploy:
   script:
     - pip install awscli
     # aws s3 sync 명령어를 활용하여 빌드된 파일을 나의 버킷에 올려주고 public-read가 가능하도록 설정해 줍니다.
-    - aws s3 cp ./ s3://$S3_BUCKET_NAME/
+    - aws s3 cp ./ s3://$S3_BUCKET_NAME/ --recursive --include "*"
   # 해당 stage는 master branch에서만 실행 가능하도록 설정해 줍니다.
   only:
     - master
