@@ -16,7 +16,7 @@ build_app:
   script:
     - npm install
     - npm run build
-    - zip -r myapp ./dist
+    - tar -zcvf myapp.tar.gz ./dist
   cache:
     paths:
       - node_modules/
