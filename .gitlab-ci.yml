@@ -16,10 +16,10 @@ build_app:
   script:
     - npm install
     - npm run build
-    - tar -zcvf myapp.tar.gz ./dist
     - mkdir -p deploy
+    - mv appspec.yml dist/appspec.yml
+    - tar -zcvf myapp.tar.gz ./dist
     - mv myapp.tar.gz deploy/myapp.tar.gz
-    - mv appspec.yml deploy/appspec.yml
     - ls -al
     - pwd
   cache:
