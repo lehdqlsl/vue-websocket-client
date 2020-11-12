@@ -17,6 +17,8 @@ build_app:
     - npm install
     - npm run build
     - tar -zcvf myapp.tar.gz ./dist
+    - mkdir -p deploy
+    - mv myapp.tar.gz deploy/myapp.tar.gz
     - ls -al
     - pwd
   cache:
@@ -40,7 +42,7 @@ deploy:
     - pip install awscli
     - ls -al
     - pwd
-    - aws s3 cp myapp.tar.gz s3://$S3_BUCKET_NAME --recursive --include "*"
+    - aws s3 cp deploy s3://$S3_BUCKET_NAME/ --recursive --include "*"
   # 해당 stage는 master branch에서만 실행 가능하도록 설정해 줍니다.
   only:
     - master
