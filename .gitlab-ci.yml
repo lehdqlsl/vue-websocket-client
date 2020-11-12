@@ -28,7 +28,7 @@ build_app:
     paths:
       # build folder
       - dist/
-      - myapp.tar.gz
+      - deploy/
     expire_in: 1 hour
 
 variables:
