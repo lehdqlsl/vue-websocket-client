@@ -7,15 +7,23 @@ stages:
   - deploy
 
 # 이 전 작업과 동일한 내용인지를 확인해서 재사용 해주는 캐싱 메커니즘의 옵션입니다.
-cache:
-  paths:
-    - node_modules/
-build:
+# build stage
+build_app:
+  image: node:alpine
   stage: build
+  only:
+    - master
   script:
     - npm install
     - npm run build
-    - ls -al
+  cache:
+    paths:
+      - node_modules/
+  artifacts:
+    paths:
+      # build folder
+      - dist/
+    expire_in: 1 hour
 
 variables:
   AWS_DEFAULT_REGION: us-east-1
@@ -29,7 +37,6 @@ deploy:
   script:
     - pip install awscli
     # aws s3 sync 명령어를 활용하여 빌드된 파일을 나의 버킷에 올려주고 public-read가 가능하도록 설정해 줍니다.
-    - pwd
     - ls -al
     - aws s3 cp dist s3://$S3_BUCKET_NAME/ --recursive --include "*"
   # 해당 stage는 master branch에서만 실행 가능하도록 설정해 줍니다.
