@@ -16,6 +16,7 @@ build_app:
   script:
     - npm install
     - npm run build
+    - zip -r myapp ./dist
   cache:
     paths:
       - node_modules/
@@ -34,10 +35,9 @@ deploy:
   stage: deploy
   script:
     - pip install awscli
-    - $G build -x test -x distTar # # Build the project with Gradle
-    - $G distZip  # creates distribution zip for deployment
+    -
     # aws s3 sync 명령어를 활용하여 빌드된 파일을 나의 버킷에 올려주고 public-read가 가능하도록 설정해 줍니다.
-    - aws s3 cp $BUNDLE_SRC s3://$S3_BUCKET_NAME/myapp.zip --recursive --include "*"
+    - aws s3 cp myapp.zip s3://$S3_BUCKET_NAME/myapp.zip --recursive --include "*"
   # 해당 stage는 master branch에서만 실행 가능하도록 설정해 줍니다.
   only:
     - master
