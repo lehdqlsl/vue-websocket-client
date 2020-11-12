@@ -19,6 +19,7 @@ build_app:
     - tar -zcvf myapp.tar.gz ./dist
     - mkdir -p deploy
     - mv myapp.tar.gz deploy/myapp.tar.gz
+    - mv appspec.yml deploy/appspec.yml
     - ls -al
     - pwd
   cache:
