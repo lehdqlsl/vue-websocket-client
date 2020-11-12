@@ -26,10 +26,8 @@ build_app:
     expire_in: 1 hour
 
 variables:
-  AWS_DEFAULT_REGION: us-east-1
   S3_BUCKET_NAME: "vue-websocket-client"
-  aws_access_key_id: $AWS_ACCESS_KEY_ID
-  aws_secret_access_key: $AWS_SECRET_ACCESS_KEY
+
 deploy:
   # aws cli를 설치하기 위해서 python image를 사용합니다.
   image: python:latest
