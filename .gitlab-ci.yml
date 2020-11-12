@@ -26,7 +26,7 @@ build_app:
     expire_in: 1 hour
 
 variables:
-  S3_BUCKET_NAME: "vue-websocket-client"
+  S3_BUCKET_NAME: "vue-websocket-service"
 
 deploy:
   # aws cli를 설치하기 위해서 python image를 사용합니다.
