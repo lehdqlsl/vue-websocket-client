@@ -3,12 +3,3 @@ os: linux
 files:
   - source: /
     destination: /home/ec2-user/www
-permissions:
-  - object: /home/ec2-user/www
-    pattern: "**"
-    owner: root
-    group: root
-    mode: 755
-    type:
-      - file
-    overwrite: yes
