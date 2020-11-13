@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div class="col-6">
+    <div class="col-lg-6 com-sm-12">
       <b-card bg-variant="light">
         <b-form-group
           label-cols-sm="3"
@@ -9,7 +9,7 @@
           label-for="nested-street"
           class="font-weight-bold"
         >
-          <b-form-input v-model="address"></b-form-input>
+          <b-form-input v-model="address" class="com-sm-8"></b-form-input>
         </b-form-group>
         <b-form-group
           label-cols-sm="3"
@@ -49,7 +49,7 @@
         </b-form-group>
       </b-card>
     </div>
-    <div class="col-6">
+    <div class="col-lg-6 com-sm-12">
       <b-card bg-variant="light">
         <b-card style="height: 500px;overflow-y: auto;">
           <p v-for="(log,idx) in logs" v-bind:key="idx">

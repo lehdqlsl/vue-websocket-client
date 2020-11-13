@@ -4,6 +4,7 @@
     <div class="col-12 mt-3">
       <WebSocket/>
     </div>
+    <ContentFooter/>
   </div>
 </template>
 
@@ -11,12 +12,14 @@
 // @ is an alias to /src
 import NavBar from '@/components/NavBar.vue'
 import WebSocket from '@/components/WebSocket.vue'
+import ContentFooter from '@/components/ContentFooter.vue'
 
 export default {
   name: 'Home',
   components: {
     NavBar,
-    WebSocket
+    WebSocket,
+    ContentFooter
   }
 }
 </script>
