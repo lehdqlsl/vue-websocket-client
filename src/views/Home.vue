@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <NavBar/>
-    <div class="col-12 mt-3">
+    <div class="col-12 mt-3" style="min-height: calc(100vh - 128px)">
       <WebSocket/>
     </div>
     <ContentFooter/>
