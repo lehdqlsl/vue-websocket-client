@@ -2,5 +2,5 @@ version: 0.0
 os: linux
 file:
   - source: /
-    destination: /home/ec2-user/www
+    destination: /opt
     overwrite: yes
