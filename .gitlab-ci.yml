@@ -16,8 +16,7 @@ build_app:
   script:
     - npm install
     - npm run build
-    - mv appspec.yml ./dist
-    - tar -zcvf myapp.tar.gz ./dist
+    - tar -zcvf myapp.tar.gz ./dist ./appspec.yml
     - mkdir -p deploy
     - mv myapp.tar.gz deploy/myapp.tar.gz
   cache:
